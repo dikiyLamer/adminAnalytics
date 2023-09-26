@@ -3,8 +3,16 @@ const service = require(`../services/order.service`);
 
 const router = express.Router();
 
-router.get('/', service.getAll);
+router.get(
+    '/',
+    passport.authenticate('jwt', { session: false }),
+    service.getAll
+);
 
-router.post('/', service.create);
+router.post(
+    '/',
+    passport.authenticate('jwt', { session: false }),
+    service.create
+);
 
 module.exports = router;

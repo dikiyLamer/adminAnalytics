@@ -3,8 +3,16 @@ const service = require(`../services/analytic.service`);
 
 const router = express.Router();
 
-router.get('/overview', service.overview);
+router.get(
+    '/overview',
+    passport.authenticate('jwt', { session: false }),
+    service.overview
+);
 
-router.get('/analytics', service.analytics);
+router.get(
+    '/analytics',
+    passport.authenticate('jwt', { session: false }),
+    service.analytics
+);
 
 module.exports = router;

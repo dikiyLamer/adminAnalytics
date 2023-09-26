@@ -1,0 +1,64 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="window">
+    <p style="font-size: 25px; margin-top: 20px">Войти в систему</p>
+    <div class="inputs">
+      <div class="input_block">
+        <input
+          type="text"
+          id="email"
+          [appUpTextInInput]="elemToUp1"
+          formControlName="email"
+        />
+        <span
+          class="helper-text"
+          *ngIf="
+            loginForm.get('email')!.invalid && loginForm.get('email')!.touched
+          "
+        >
+          <span *ngIf="loginForm.get('email')!.errors!['required']"
+            >email не должен быть пустым</span
+          >
+          <span *ngIf="loginForm.get('email')!.errors!['email']"
+            >email не корректен</span
+          >
+        </span>
+        <label for="email">
+          <span #elemToUp1 class="animated">Email</span>
+        </label>
+      </div>
+      <div class="input_block">
+        <input
+          type="text"
+          id="password"
+          [appUpTextInInput]="elemToUp"
+          formControlName="password"
+        />
+        <span
+          class="helper-text"
+          *ngIf="
+            loginForm.get('password')!.invalid &&
+            loginForm.get('password')!.touched
+          "
+        >
+          <span *ngIf="loginForm.get('password')!.errors!['required']"
+            >пароль не должен быть пустым</span
+          >
+          <span *ngIf="loginForm.get('password')!.errors!['minlength']"
+            >пароль должен быть больше или равен
+            {{
+              loginForm.get("password")!.errors!["minlength"]["requiredLength"]
+            }}
+            символов</span
+          >
+        </span>
+
+        <label for="password">
+          <span #elemToUp class="animated">Password</span>
+        </label>
+      </div>
+    </div>
+
+    <hr />
+    <button [disabled]="loginForm.invalid">ВОЙТИ</button>
+  </div>
+</form>

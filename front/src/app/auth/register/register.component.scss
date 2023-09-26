@@ -1,0 +1,83 @@
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  &:focus {
+    border-bottom: 1px solid green;
+  }
+  &:hover {
+    border-bottom: 1px solid rgb(57, 196, 57);
+  }
+}
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header {
+  display: flex;
+  background-color: rgba(197, 196, 194, 0.896);
+  height: 5vh;
+  p {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: rgba(155, 154, 154, 0.896);
+    }
+  }
+}
+hr {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10% auto;
+  width: 400px;
+  height: 300px;
+  .input_block {
+    input {
+      margin: 20px 0px 0px 5%;
+      width: 90%;
+      height: 30px;
+    }
+    position: relative;
+    & label span {
+      position: absolute;
+      left: 25px;
+      top: 30px;
+      color: rgba(0, 0, 0, 0.3);
+      transition: all 0, 3 ease;
+    }
+  }
+
+  button {
+    display: inline-block;
+    margin: 10px 20px;
+    background-color: rgb(41, 160, 102);
+    height: 10%;
+    font-weight: 050;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: rgba(0, 128, 0, 0.5);
+      cursor: pointer;
+    }
+    &[disabled] {
+      background-color: rgba(108, 109, 109, 0.615);
+    }
+  }
+}
+
+.inputs {
+  flex-grow: 1;
+}
+
+.animated {
+  transition-property: top;
+  transition-duration: 0.3s;
+}

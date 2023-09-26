@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  background-color: rgba(197, 196, 194, 0.896);
+  height: 5vh;
+  p {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: rgba(155, 154, 154, 0.896);
+    }
+  }
+}
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
