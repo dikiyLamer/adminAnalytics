@@ -4,12 +4,22 @@
     <div class="inputs">
       <div class="input_block">
         <input
+          [ngClass]="{
+            invalid:
+              registerForm.get('email')!.invalid &&
+              registerForm.get('email')!.touched
+          }"
           type="text"
           id="email"
           [appUpTextInInput]="elemToUp1"
           formControlName="email"
         />
         <span
+          [ngClass]="{
+            invalid:
+              registerForm.get('email')!.invalid &&
+              registerForm.get('email')!.touched
+          }"
           class="helper-text"
           *ngIf="
             registerForm.get('email')!.invalid &&
@@ -29,12 +39,22 @@
       </div>
       <div class="input_block">
         <input
+          [ngClass]="{
+            invalid:
+              registerForm.get('password')!.invalid &&
+              registerForm.get('password')!.touched
+          }"
           type="text"
           id="password"
           [appUpTextInInput]="elemToUp"
           formControlName="password"
         />
         <span
+          [ngClass]="{
+            invalid:
+              registerForm.get('password')!.invalid &&
+              registerForm.get('password')!.touched
+          }"
           class="helper-text"
           *ngIf="
             registerForm.get('password')!.invalid &&
@@ -62,6 +82,8 @@
     </div>
 
     <hr />
-    <button [disabled]="registerForm.invalid">ЗАРЕГИСТРОРОВАТЬСЯ</button>
+    <button [disabled]="registerForm.invalid || registerForm.disabled">
+      ЗАРЕГИСТРОРОВАТЬСЯ
+    </button>
   </div>
 </form>

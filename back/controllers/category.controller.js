@@ -1,6 +1,5 @@
 const express = require('express');
 const passport = require('passport');
-
 const upload = require('../middleware/upload');
 const service = require(`../services/category.service`);
 const router = express.Router();

@@ -1,6 +1,6 @@
 const express = require('express');
 const service = require(`../services/position.service`);
-
+const passport = require('passport');
 const router = express.Router();
 
 router.get(

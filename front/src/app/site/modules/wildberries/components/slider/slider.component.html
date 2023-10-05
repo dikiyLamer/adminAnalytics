@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="slider">
+    <button (click)="sliderPrev()" class="left">
+      <span class="material-symbols-outlined"> arrow_back </span>
+    </button>
+    <button (click)="sliderNext()" class="right">
+      <span class="material-symbols-outlined"> arrow_forward </span>
+    </button>
+    <div class="image">
+      <img [src]="path" alt="" [@changeImg]="imgState" />
+    </div>
+  </div>
+  <div class="dots">
+    <ul [style.left]="-sliderIndex * 10 + 'px'">
+      <li
+        *ngFor="let image of images; let i = index"
+        [ngClass]="{
+          active: i === sliderIndex,
+          'pre-active': i === sliderIndex - 1 || i === sliderIndex + 1,
+          'pre-pre-active': i === sliderIndex - 2 || i === sliderIndex + 2,
+        }"
+        (click)="clickedOnBullet($event, i)"
+      ></li>
+    </ul>
+  </div>
+</div>

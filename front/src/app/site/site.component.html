@@ -1,1 +1,33 @@
-<p>site works!</p>
+<div class="header">
+  <div style="display: flex">
+    <p (click)="expandMenu()" style="margin-left: 10px">
+      <span class="material-symbols-outlined" style="user-select: none">
+        menu
+      </span>
+    </p>
+    <p routerLink="overview">Ildar</p>
+  </div>
+</div>
+<div class="wrapper">
+  <div
+    class="menu"
+    (mouseenter)="onHoverMenu()"
+    (mouseleave)="onBlurMenu()"
+    [@expandedMenu]="state"
+  >
+    <ng-container *ngIf="menuExpanded || mouseEnterToMenu">
+      <p *ngFor="let link of links" [routerLink]="link.url">
+        {{ link.name }}
+      </p>
+    </ng-container>
+    <ng-container *ngIf="!menuExpanded && !mouseEnterToMenu">
+      <p *ngFor="let link of links" [routerLink]="link.url">
+        <span class="material-symbols-outlined">
+          {{ link.icon }}
+        </span>
+      </p>
+    </ng-container>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

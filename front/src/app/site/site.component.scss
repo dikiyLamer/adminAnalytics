@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  background-color: rgba(197, 196, 194, 0.896);
+  height: 5vh;
+  p {
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: rgba(155, 154, 154, 0.896);
+    }
+  }
+}
+p {
+  margin: 0 20px 5px 20px;
+}
+
+.wrapper {
+  display: flex;
+  height: 95vh;
+}
+
+.menu {
+  width: 250px;
+  border-right: 1px rgba(0, 0, 0, 0.3) solid;
+  & p {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 0px;
+    text-align: center;
+
+    &:hover {
+      background-color: aliceblue;
+    }
+  }
+}

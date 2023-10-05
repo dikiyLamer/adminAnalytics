@@ -4,12 +4,20 @@
     <div class="inputs">
       <div class="input_block">
         <input
+          [ngClass]="{
+            invalid:
+              loginForm.get('email')!.invalid && loginForm.get('email')!.touched
+          }"
           type="text"
           id="email"
           [appUpTextInInput]="elemToUp1"
           formControlName="email"
         />
         <span
+          [ngClass]="{
+            invalid:
+              loginForm.get('email')!.invalid && loginForm.get('email')!.touched
+          }"
           class="helper-text"
           *ngIf="
             loginForm.get('email')!.invalid && loginForm.get('email')!.touched
@@ -28,12 +36,22 @@
       </div>
       <div class="input_block">
         <input
+          [ngClass]="{
+            invalid:
+              loginForm.get('password')!.invalid &&
+              loginForm.get('password')!.touched
+          }"
           type="text"
           id="password"
           [appUpTextInInput]="elemToUp"
           formControlName="password"
         />
         <span
+          [ngClass]="{
+            invalid:
+              loginForm.get('password')!.invalid &&
+              loginForm.get('password')!.touched
+          }"
           class="helper-text"
           *ngIf="
             loginForm.get('password')!.invalid &&
@@ -59,6 +77,8 @@
     </div>
 
     <hr />
-    <button [disabled]="loginForm.invalid">ВОЙТИ</button>
+    <button [disabled]="loginForm.invalid || loginForm.disabled">ВОЙТИ</button>
   </div>
 </form>
+
+<div class="snack" [ngClass]="{ show: snack }">{{ snackText }}</div>
