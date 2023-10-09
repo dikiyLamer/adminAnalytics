@@ -4,9 +4,7 @@ import { StieRoutingModule } from './site-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
-  declarations: [
-    OverviewComponent
-  ],
+  declarations: [OverviewComponent],
   imports: [CommonModule, StieRoutingModule],
 })
 export class SiteModule {}

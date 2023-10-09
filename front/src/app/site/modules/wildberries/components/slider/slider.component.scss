@@ -1,6 +1,6 @@
 @mixin image-mixin {
   height: 400px;
-  width: 90vw;
+  width: 100%;
   border-radius: 30px;
 }
 
@@ -11,6 +11,7 @@
 img {
   opacity: 1;
   transition: opacity 0.5s linear;
+
   @include image-mixin;
 }
 
