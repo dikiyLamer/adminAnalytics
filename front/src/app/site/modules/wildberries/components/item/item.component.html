@@ -3,12 +3,16 @@
     <img [src]="product.images[0]" [attr.alt]="product.name" />
   </div>
   <div class="info">
-    <p class="info__actual_cost"></p>
-    <p class="info__previous_cost"></p>
-    <p class="info__name_line"></p>
+    <p class="info__actual_cost">{{product.cost}}₽ &nbsp;</p>
+    <p class="info__previous_cost"><s>{{product.lastcost}}₽</s></p>
+    <p class="info__name_line"><span class="brand">{{product.brand}}</span> / <span class="name">{{product.name}}</span></p>
     <p class="info__rating">
-      <span class="info__rating_amount"></span>
+      <span class="material-symbols-outlined" style="display: inline-block;">
+        grade
+        </span>
+      {{product.rating}}
+      <span class="info__rating_amount" style="display: inline-block;">{{product.rating_amount}} оценки</span>
     </p>
-    <p class="info__date_of_delivery"></p>
+    <p class="info__date_of_delivery"><span style="color:rgba(0,0,0,.5)">Доставка</span> {{product.delivery_date}}</p>
   </div>
 </div>

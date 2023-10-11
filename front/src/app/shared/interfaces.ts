@@ -12,6 +12,7 @@ export interface Product {
   lastcost: number;
   rating: number;
   rating_amount: number;
+  delivery_date: string;
   articul: number;
   compound: string;
   more_info: { [key: string]: string };

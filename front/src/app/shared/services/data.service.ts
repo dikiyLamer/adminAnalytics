@@ -53,6 +53,7 @@ export class DataService {
       'assets/goose/10.png',
       'assets/goose/11.png',
     ],
+    delivery_date: 'завтра'
   };
   private products: Product[] = [];
   constructor() {}

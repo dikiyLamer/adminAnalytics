@@ -186,9 +186,13 @@ ul {
 
 .items {
   display: flex;
+  width: 100%;
+  flex-flow: row wrap;
 }
 
 app-item {
-  width: 300px;
-  height: 500px;
+  margin: 8px;
+  width: calc(100%/6 - 16px);
+  height: auto;
 }
+
