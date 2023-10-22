@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-site',
@@ -19,7 +19,18 @@ import { Component } from '@angular/core';
     ]),
   ],
 })
-export class SiteComponent {
+export class SiteComponent implements OnInit, AfterViewInit {
+  documentHeight: number = 0;
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.documentHeight = document.scrollingElement!.scrollHeight;
+    });
+
+    console.log(this.documentHeight);
+  }
+  ngOnInit(): void {
+    console.log('init site');
+  }
   menuExpanded = false;
   mouseEnterToMenu = false;
   state = 'initial';

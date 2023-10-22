@@ -1,8 +1,11 @@
 .wrapper {
+  position: static;
+  padding: 8px;
+  z-index: 0;
   width: calc(100%);
 }
 
-.info{
+.info {
   margin-top: 10px;
 }
 
@@ -12,47 +15,85 @@ img {
   border-radius: 10px;
 }
 
-.info__actual_cost{
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.quick_view {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  opacity: 0.8;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity ease 0.3s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.heart {
+  // background-color: rgba(255, 255, 255, 0.5);
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  right: 0px;
+  color: rgb(93, 90, 93);
+  cursor: pointer;
+  &:hover {
+    color: rgb(203, 17, 171);
+  }
+}
+
+.info__actual_cost {
   display: inline-block;
   font-size: 18px;
   font-weight: bold;
 }
 
-.info__previous_cost{
+.info__previous_cost {
   display: inline-block;
   font-size: 18px;
-  color: rgba(0,0,0,0.5)
-
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.info__name_line{
+.info__name_line {
+  max-height: 40px;
   overflow: hidden;
   white-space: nowrap;
-  & .name{
-    color: rgba(0,0,0,0.5);
+  & .name {
+    color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
     white-space: nowrap;
   }
 }
 
-.material-symbols-outlined {
-  color: rgb(255, 221, 0);
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-.info__rating{
+.info__rating {
   display: flex;
   align-items: center;
+  & > .material-symbols-outlined {
+    color: rgb(255, 221, 0);
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+}
+p {
+  margin-bottom: 5px;
 }
 
-.info__rating_amount{
+.info__rating_amount {
   color: #9d9da5;
-  &:before{
-    content: '';
+  overflow: hidden;
+  white-space: nowrap;
+  &:before {
+    content: "";
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
@@ -60,5 +101,39 @@ img {
     height: 4px;
     background-color: #9d9da5;
     margin: 0 4px 2px;
+  }
+}
+
+.hover-button {
+  border: none;
+  outline: none;
+  width: 70%;
+  height: 40px;
+  background-color: rgb(203, 17, 171);
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(200, 82, 180);
+  }
+}
+
+.wrapper-hover {
+  position: absolute;
+  background-color: white;
+  z-index: 3;
+
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  & .info__name_line {
+    white-space: normal;
+    & .name {
+      white-space: normal;
+    }
   }
 }
