@@ -12,9 +12,7 @@ export class WildberriesComponent implements OnInit, AfterViewInit {
   countOfItems: number = 10;
   resumeExpanded: boolean = false;
   constructor(private data: DataService) {}
-  ngAfterViewInit(): void {
-    console.log('after wild');
-  }
+  ngAfterViewInit(): void {}
   ngOnInit(): void {
     this.products = this.data.getProducts(this.countOfItems);
   }

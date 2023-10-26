@@ -23,8 +23,6 @@ export class ScrollUpDirective implements OnInit {
 
   @HostListener('document:scroll', ['$event'])
   pageScrolled(event: any) {
-    console.log(this.template);
-
     if (window.scrollY === 0) {
       this.viewContainer.clear();
       this.isScrollChanged = false;

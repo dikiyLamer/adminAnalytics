@@ -1,7 +1,7 @@
 <div class="wrapper" itemHover [product]="product">
   <div class="image">
     <img [src]="product.images[0]" [attr.alt]="product.name" />
-    <div class="quick_view">Быстрый просмотр</div>
+    <div class="quick_view" (click)="callQuickView()">Быстрый просмотр</div>
     <span class="material-symbols-outlined heart"> favorite </span>
   </div>
 
@@ -29,3 +29,11 @@
     </p>
   </div>
 </div>
+
+<ng-container *ngIf="quickViewCalled">
+  <app-quick-view
+    #quickViewContainer
+    [product]="product"
+    (closeView)="onCloseView($event)"
+  ></app-quick-view>
+</ng-container>

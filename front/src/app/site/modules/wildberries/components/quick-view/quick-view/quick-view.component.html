@@ -1,4 +1,26 @@
-<div class="wrapper">
-  <div class="image"></div>
-  <div class="info"></div>
+<div class="wrapper" #wrapper>
+  <div class="image">
+    <canvas #canvas></canvas>
+    <!-- <img src="assets/goose/1.png" width="100%" height="100%" alt="" /> -->
+  </div>
+  <div class="info">
+    <p class="info__name_line">
+      <span class="brand">{{ product.brand }}</span> /
+      <span class="name">{{ product.name }}</span>
+    </p>
+    <p class="info__rating">
+      <span class="material-symbols-outlined" style="display: inline-block">
+        grade
+      </span>
+      {{ product.rating }}
+      <span class="info__rating_amount" style="display: inline-block"
+        >{{ product.rating_amount }} оценки</span
+      >
+    </p>
+    <p class="info__actual_cost">{{ product.cost }}₽ &nbsp;</p>
+    <p class="info__previous_cost">
+      <s>{{ product.lastcost }}₽</s>
+    </p>
+  </div>
 </div>
+<!-- appMousemooveScroll -->

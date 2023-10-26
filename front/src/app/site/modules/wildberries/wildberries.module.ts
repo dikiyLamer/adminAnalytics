@@ -7,6 +7,7 @@ import { ItemComponent } from './components/item/item.component';
 import { ItemHoverDirective } from './directives/item-hover.directive';
 import { ScrollUpDirective } from 'src/app/shared/directives/scroll-up.directive';
 import { QuickViewComponent } from './components/quick-view/quick-view/quick-view.component';
+import { MousemooveScrollDirective } from 'src/app/shared/directives/mousemoove-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { QuickViewComponent } from './components/quick-view/quick-view/quick-vie
     ItemHoverDirective,
     ScrollUpDirective,
     QuickViewComponent,
+    MousemooveScrollDirective,
   ],
   imports: [CommonModule, WildberriesRoutingModule],
 })

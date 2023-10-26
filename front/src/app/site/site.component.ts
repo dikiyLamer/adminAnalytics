@@ -25,12 +25,8 @@ export class SiteComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.documentHeight = document.scrollingElement!.scrollHeight;
     });
-
-    console.log(this.documentHeight);
   }
-  ngOnInit(): void {
-    console.log('init site');
-  }
+  ngOnInit(): void {}
   menuExpanded = false;
   mouseEnterToMenu = false;
   state = 'initial';

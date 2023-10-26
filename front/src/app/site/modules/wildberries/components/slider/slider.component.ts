@@ -74,9 +74,6 @@ export class SliderComponent implements OnInit {
   }
 
   updatePath() {
-    console.log(this.images);
-    console.log(this.sliderIndex);
-
     this.path = `assets/${this.images[this.sliderIndex]}.webp`;
   }
 
